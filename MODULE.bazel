@@ -1,10 +1,10 @@
 module(
-    name = "bazel-cpp-helsinki",
+    name = "bazel-cpp",
     version = "1.0",
 )
 
-bazel_dep(name = "rules_cc", version = "0.0.17")
-bazel_dep(name = "toolchains_llvm", version = "1.2.0")
+bazel_dep(name = "rules_cc", version = "0.1.1")
+bazel_dep(name = "toolchains_llvm", version = "1.4.0")
 
 llvm = use_extension("@toolchains_llvm//toolchain/extensions:llvm.bzl", "llvm")
 llvm.toolchain(
@@ -14,4 +14,4 @@ use_repo(llvm, "llvm_toolchain")
 
 register_toolchains("@llvm_toolchain//:all")
 
-bazel_dep(name = "googletest", version = "1.15.2")
+bazel_dep(name = "googletest", version = "1.16.0")
